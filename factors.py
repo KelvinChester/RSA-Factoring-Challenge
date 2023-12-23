@@ -10,7 +10,10 @@ def factorize_number(n):
 
 def factorize_file(file_path):
     with open(file_path, 'r') as file:
-        for line in file_path:
+        for line in file:
+            line = line.strip()
+            if not line.isdigit():
+                continue
             number = int(line)
             factors = factorize_number(number)
             if factors:
